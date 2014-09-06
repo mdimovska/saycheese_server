@@ -7,6 +7,7 @@
 		"express": "~4.0.0",
 		"mongoose": "~3.6.13",
 		"mongodb": "*",
-		"body-parser": "~1.4.3"
+		"body-parser": "~1.4.3",
+        "formidable":"1.0.15"
 	}
 }

@@ -2,6 +2,10 @@ var express = require("express");
 var app = express();
 var dbPath = 'mongodb://localhost/saycheese';
 var bodyParser = require('body-parser');
+
+var formidable = require('formidable'),
+    http = require('http'),
+    util = require('util');
 // Import the data layer
 var mongoose = require('mongoose');
 // Import the models
@@ -16,8 +20,35 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 mongoose.connect(dbPath, function onMongooseError(err) {
 	if (err) throw err;
-}); 
-	
+});
+var fileupload = require('fileupload').createFileUpload('/uploadDir');
+
+
+http.createServer(function(req, res) {
+    /* Process the form uploads */
+    if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
+        var form = new formidable.IncomingForm();
+        form.parse(req, function(err, fields, files) {
+            res.writeHead(200, {'content-type': 'text/plain'});
+            res.write('received upload:\n\n');
+            res.end(util.inspect({fields: fields, files: files}));
+        });
+
+        return;
+    }
+
+    /* Display the file upload form. */
+    res.writeHead(200, {'content-type': 'text/html'});
+    res.end(
+            '<form action="/upload" enctype="multipart/form-data" method="post">'+
+            '<input type="text" name="title"><br>'+
+            '<input type="file" name="upload" multiple="multiple"><br>'+
+            '<input type="submit" value="Upload">'+
+            '</form>'
+    );
+
+}).listen(8080);
+
 app.get('/', function(req, res){
 	//next();?????
 });
@@ -69,21 +100,23 @@ app.post('/register', function(req, res) {
 
 //OK - not used!
 app.post('/login', function(req, res) {
-	console.log('login request');
-	var _id = req.param('_id', null);
-	if ( null == _id || _id.length < 1 ) {
-		res.send(400);
-		return;
-	}
-	models.User.login(_id, function(success) {
-	if ( !success ) {
-		res.send(400 );
-	}else{
-		console.log('login was successful');
-		res.send(200);
-	}
-	});
+    console.log('login request');
+    var _id = req.param('_id', null);
+    if ( null == _id || _id.length < 1 ) {
+        res.send(400);
+        return;
+    }
+    models.User.login(_id, function(success) {
+        if ( !success ) {
+            res.send(400 );
+        }else{
+            console.log('login was successful');
+            res.send(200);
+        }
+    });
 });
+
+
 
 //OK
 //returns users
