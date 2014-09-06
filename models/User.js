@@ -230,8 +230,15 @@ var acceptFriend = function(user, user1, callback) {
 							//TODO: BREAK!
 						}
 					});
-					if(!areFriends)
-						users.push(user1);
+					if(!areFriends){
+					  var userToAdd = {
+						userId: user1._id,
+						firstName: user1.firstName,
+						lastName: user1.lastName,
+						pictureUrl: user1.pictureUrl
+					  };
+						users.push(userToAdd);
+					}
 				});
 			}
 		    callback(users);
