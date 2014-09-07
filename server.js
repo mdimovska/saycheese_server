@@ -46,8 +46,6 @@ app.get('/', function(req, res){
 app.post("/upload",function(req,res){
     var form = new formidable.IncomingForm();
 
-
-
     form.parse(req, function(err, fields, files) {
         var targetDirectory = imageLocations+"/"+fields._id;
         fs.ensureDir(targetDirectory, function(err) {
@@ -57,7 +55,7 @@ app.post("/upload",function(req,res){
         res.write('received upload:\n\n');
         res.end(util.inspect({fields: fields, files: files}));
 
-        fs.copy(files.upload.path, targetDirectory +"/"+files.upload.name, function(err){
+        fs.copy(files.path.path, targetDirectory +"/"+files.path.name, function(err){
             if (err) return console.error(err);
             console.log("success!")
         }); //copies file
