@@ -14,6 +14,8 @@ var models = {
 	Photo: require('./models/Photo')( mongoose )
 };
 var imageLocations = "/saycheese/images";
+
+var fs = require('fs-extra');
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +30,7 @@ http.createServer(function(req, res) {
     res.writeHead(200, {'content-type': 'text/html'});
     res.end(
             '<form action="http://127.0.0.1:9000/upload" enctype="multipart/form-data" method="post">'+
-            '<input type="text" name="title"><br>'+
+            '<input type="text" name="_id" id="_id"><br>'+
             '<input type="file" name="upload" multiple="multiple"><br>'+
             '<input type="submit" value="Upload">'+
             '</form>'
@@ -43,30 +45,43 @@ app.get('/', function(req, res){
 
 app.post("/upload",function(req,res){
     var form = new formidable.IncomingForm();
-    form.uploadDir = imageLocations+"//"+req.param('_id', null);
+
+
+
     form.parse(req, function(err, fields, files) {
+        var targetDirectory = imageLocations+"/"+fields._id;
+        fs.ensureDir(targetDirectory, function(err) {
+            console.log(err); //null
+        });
         res.writeHead(200, {'content-type': 'text/plain'});
         res.write('received upload:\n\n');
         res.end(util.inspect({fields: fields, files: files}));
+
+        fs.copy(files.upload.path, targetDirectory +"/"+files.upload.name, function(err){
+            if (err) return console.error(err);
+            console.log("success!")
+        }); //copies file
     });
     return;
 });
 
+app.post("/deletePicture",function(req,res){
+    var _profileId = req.param('_profileId', null);
+    var _pictureId = req.param('_pictureId',null);
 
-//OK
-/*
-As long as a valid _id is provided, the registration process is allowed to proceed. 
-Otherwise, error code 400 (Bad Request) is returned.
-*/
-/* x-www-form-urlencoded */
-/*
-POST /register HTTP/1.1
-Host: localhost:8080
-Cache-Control: no-cache
-Content-Type: application/x-www-form-urlencoded
 
-_id=1&fisrtName=Milena&lastName=Dimovska&pictureUrl=urlMilenaDimovska
-*/
+    fs.remove(imageLocations+"/"+_profileId+"/"+_pictureId, function(err){
+        if (err){
+            return res.send(401);
+        } else{
+            console.log("success!");
+            return res.send(200);
+        }
+    });
+
+});
+
+
 app.post('/register', function(req, res) {
 	var _id = req.param('_id', null);
 	var firstName = req.param('firstName', '');

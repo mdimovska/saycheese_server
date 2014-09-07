@@ -2,44 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13da5d88-8534-4a40-a4a6-6a75066cd899" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\TestUpload.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\.jshintignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\index.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\lib\fileupload.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\lib\modules\file.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\lib\tidy-up-tmp-dir.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\async\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\async\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\async\component.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\async\lib\async.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\async\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.compat.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.compat.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.underscore.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\dist\lodash.underscore.min.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\lodash\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\README.md" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\mime.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\test.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\types\mime.types" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\node_modules\mime\types\node.types" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\package.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\test\files\test1.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\test\files\test2.gif" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\test\fileupload.test.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\test\test-helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Milena\git\saycheese_server\node_modules\fileupload\test\tests.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="saycheese_server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,8 +29,18 @@
       <file leaf-file-name="server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33216783" vertical-offset="279" max-vertical-offset="7854">
-              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.4047619" vertical-offset="1122" max-vertical-offset="8109">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="340">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -168,6 +142,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="saycheese_server" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saycheese_server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="saycheese_server" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,22 +429,22 @@
       <workItem from="1410002269592" duration="194000" />
       <workItem from="1410002507188" duration="323000" />
       <workItem from="1410002895941" duration="9612000" />
-      <workItem from="1410087131116" duration="1327000" />
+      <workItem from="1410087131116" duration="4312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11456000" />
+    <option name="totallyTimeSpent" value="14441000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24169184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40849674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -471,7 +459,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -499,7 +487,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -539,14 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4047619" vertical-offset="3706" max-vertical-offset="4879">
@@ -555,10 +535,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="340">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33216783" vertical-offset="279" max-vertical-offset="7854">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.4047619" vertical-offset="1122" max-vertical-offset="8109">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
           <folding />
         </state>
       </provider>
