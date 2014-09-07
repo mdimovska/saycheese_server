@@ -13,7 +13,7 @@ var models = {
 	User: require('./models/User')( mongoose ),
 	Photo: require('./models/Photo')( mongoose )
 };
-
+var imageLocations = "/saycheese/images";
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,7 +21,6 @@ app.use(bodyParser.json());
 mongoose.connect(dbPath, function onMongooseError(err) {
 	if (err) throw err;
 });
-var fileupload = require('fileupload').createFileUpload('/uploadDir');
 
 
 http.createServer(function(req, res) {
@@ -44,6 +43,7 @@ app.get('/', function(req, res){
 
 app.post("/upload",function(req,res){
     var form = new formidable.IncomingForm();
+    form.uploadDir = imageLocations+"//"+req.param('_id', null);
     form.parse(req, function(err, fields, files) {
         res.writeHead(200, {'content-type': 'text/plain'});
         res.write('received upload:\n\n');
