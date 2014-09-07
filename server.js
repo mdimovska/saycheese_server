@@ -56,8 +56,28 @@ app.post("/upload",function(req,res){
         res.end(util.inspect({fields: fields, files: files}));
 
         fs.copy(files.path.path, targetDirectory +"/"+files.path.name, function(err){
-            if (err) return console.error(err);
-            console.log("success!")
+            if (err){
+                console.error(err);
+            }
+            else{
+                console.log("success!");
+                var userId = fields._id;
+                var firstName = fields.firstName;
+                var lastName = fields.lastName;
+                var photoUrl = fields.photoUrl;
+                var caption = fields.caption;
+                if ( null == userId || userId.length < 1 || userId == '' ||  null == photoUrl || photoUrl.length < 1 || photoUrl == '' ) {
+                    console.log('empty inputs for photo saving');
+                }else{
+                    models.Photo.addPhoto(userId, firstName, lastName, photoUrl, caption, function(success) {
+                        if ( !success ) {
+                            console.log('error in saving the photo');
+                        }else{
+                            console.log('photo saved');
+                        }
+                    });
+                }
+            }
         }); //copies file
     });
     return;
@@ -162,7 +182,6 @@ app.get('/users/:id', function(req, res) { //404 if /users/
 //OK
 //add contact
 app.post('/users/addContact', function(req,res) {
-	//var userId = req.params.id;
 	var userId = req.param('userId', null);
 	var contactId = req.param('contactId', null);
 	// Missing contactId, don't bother going any further
@@ -320,7 +339,7 @@ app.post('/users/:id/findFriends', function(req, res) {
 // ============================== PHOTOS ============================== //
 
 //OK
-//add photo
+//add photo (not used)
 app.post('/photos/photo', function(req, res) {
 	console.log('add photo request');
 	var userId = req.param('userId', null);
