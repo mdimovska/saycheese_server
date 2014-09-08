@@ -32,8 +32,7 @@ module.exports = function(mongoose) {
 	//OK
 	var addPhoto = function(userId, firstName, lastName, photoUrl, caption, callback) {
 		var photo = new Photo({
-			userId: userId,		
-			firstName: firstName, 
+ 			firstName: firstName,
 			lastName: lastName,
 			photoUrl: photoUrl,
 			caption: caption,

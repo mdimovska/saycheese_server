@@ -41,6 +41,11 @@ http.createServer(function(req, res) {
 app.get('/', function(req, res){
 	//next();?????
 });
+app.get("/picture/:id/:imageId",function(req,res){
+    var img = fs.readFileSync("/saycheese/images/"+req.params.id+"/"+req.params.imageId);
+    res.writeHead(200, {'Content-Type': 'image/jpg' });
+    res.end(img, 'binary');
+});
 
 
 app.post("/upload",function(req,res){
@@ -247,7 +252,7 @@ app.post('/users/removeContact', function(req,res) {
 //get friend requests
 app.get('/users/:id/friendRequests', function(req, res) {
 	var userId = req.params.id;
-	
+
 	models.User.findById(userId, function(user) {
 		if ( user ) {
 				var friends = [];
@@ -301,7 +306,7 @@ app.post('/users/:id/acceptFriend', function(req,res) {
 //get friends (status == 'friends')
 app.get('/users/:id/contacts', function(req, res) {
 	var userId = req.params.id;
-	
+
 	models.User.findById(userId, function(user) {
 		if ( user ) {
 				var friends = [];
@@ -328,7 +333,7 @@ app.post('/users/:id/findFriends', function(req, res) {
 		if ( user ) {
 			models.User.findFacebookFriends(user, fbContacts, function(users){
 				res.send(users);
-			});	
+			});
 		}
 		else{
 			res.send(400);
@@ -378,14 +383,14 @@ app.delete('/photos/photo', function(req,res) {
 			}else{
 			  res.send(200);
 			}
-		  }); 
+		  });
 		}
 	  });
 	}
 });
 
 //OK
-//get user's photos    //if only /photos/ 404 Not Found error 
+//get user's photos    //if only /photos/ 404 Not Found error
 // if wrong id (id that do not exists in db), returns []
 app.get('/photos/:id', function(req, res) {
 	var userId = req.params.id;
@@ -406,7 +411,7 @@ app.get('/photos/', function(req, res) {
 //get photos of user's friends
 app.get('/photos/:id/latest', function(req, res) {
 	var userId = req.params.id;
-	
+
 	models.User.findById(userId, function(user) {
 		if ( user ) {
 				var friendsList = []; //list of ids of user's friends
@@ -414,17 +419,17 @@ app.get('/photos/:id/latest', function(req, res) {
 					if ( contact.status == 'friends' ) {
 						friendsList.push(contact.userId);
 					}
-				});			
-			
+				});
+
 				models.Photo.getPhotosByUsers(friendsList, function(photos) {
 					res.send(photos);
-				});	
+				});
 		}
 		else{
 			res.send(400);
 		}
 	});
-});	
+});
 
 
 //OK
@@ -435,7 +440,7 @@ app.post('/photos/comment', function(req,res) {
 	var firstName = req.param('firstName', null);
 	var lastName = req.param('lastName', null);
 	var comment = req.param('comment', null);
-	
+
 	// Missing contactId, don't bother going any further
 	if ( null == userId || userId == '' || null == comment || comment == '' ||  null == photoId || photoId == ''  ) {
 		res.send(400);
@@ -464,7 +469,7 @@ app.post('/photos/like', function(req,res) {
 	var photoId = req.param('photoId', null);
 	var firstName = req.param('firstName', null);
 	var lastName = req.param('lastName', null);
-	
+
 	// Missing contactId, don't bother going any further
 	if ( null == userId || userId == '' || null == photoId || photoId == '') {
 		res.send(400);

@@ -11,10 +11,12 @@
               <option value="localhost:27017" />
             </list>
           </option>
+          <option name="shellWorkingDir" value="D:\Milena\db\mongodb\data\db" />
           <option name="userDatabase" value="saycheese" />
         </ServerConfiguration>
       </list>
     </option>
+    <option name="shellPath" value="D:\Milena\db\mongodb\bin\mongod.exe" />
   </component>
 </project>
 
