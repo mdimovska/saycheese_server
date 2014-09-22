@@ -13,7 +13,7 @@ var models = {
 	User: require('./models/User')( mongoose ),
 	Photo: require('./models/Photo')( mongoose )
 };
-var imageLocations = "/saycheese/images";
+var imageLocations = "/Users/gkopevski/gk/md/saycheese/images";
 
 var fs = require('fs-extra');
 // configure app to use bodyParser()
@@ -42,7 +42,7 @@ app.get('/', function(req, res){
 	//next();?????
 });
 app.get("/picture/:id/:imageId",function(req,res){
-    var img = fs.readFileSync("/saycheese/images/"+req.params.id+"/"+req.params.imageId);
+    var img = fs.readFileSync("/Users/gkopevski/gk/md/saycheese/images/"+req.params.id+"/"+req.params.imageId);
     res.writeHead(200, {'Content-Type': 'image/jpg' });
     res.end(img, 'binary');
 });
@@ -70,11 +70,13 @@ app.post("/upload",function(req,res){
                 var firstName = fields.firstName;
                 var lastName = fields.lastName;
                 var photoUrl = fields.photoUrl;
+                var photoWidth = fields.photoWidth;
+                var photoHeight = fields.photoHeight;
                 var caption = fields.caption;
                 if ( null == userId || userId.length < 1 || userId == '' ||  null == photoUrl || photoUrl.length < 1 || photoUrl == '' ) {
                     console.log('empty inputs for photo saving');
                 }else{
-                    models.Photo.addPhoto(userId, firstName, lastName, photoUrl, caption, function(success) {
+                    models.Photo.addPhoto(userId, firstName, lastName, photoUrl, caption, photoWidth, photoHeight, function(success) {
                         if ( !success ) {
                             console.log('error in saving the photo');
                         }else{
@@ -420,7 +422,7 @@ app.get('/photos/:id/latest', function(req, res) {
 						friendsList.push(contact.userId);
 					}
 				});
-
+            friendsList.push(userId);
 				models.Photo.getPhotosByUsers(friendsList, function(photos) {
 					res.send(photos);
 				});

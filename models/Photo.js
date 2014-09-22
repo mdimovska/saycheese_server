@@ -23,6 +23,8 @@ module.exports = function(mongoose) {
 		caption: { type: String },
 		dateTaken: { type: Date },
 		removed: {type: String}, //0-not removed, 1-removed
+        photoWidth: { type: String },
+        photoHeight: { type: String },
 		comments: [Comment],
 		likes: [Like]
 	});
@@ -30,13 +32,16 @@ module.exports = function(mongoose) {
 	var Photo = mongoose.model('Photo', PhotoSchema);
 	
 	//OK
-	var addPhoto = function(userId, firstName, lastName, photoUrl, caption, callback) {
+	var addPhoto = function(userId, firstName, lastName, photoUrl, caption,photoWidth,photoHeight, callback) {
 		var photo = new Photo({
+            userId: userId,
  			firstName: firstName,
 			lastName: lastName,
 			photoUrl: photoUrl,
 			caption: caption,
 			dateTaken: new Date(),
+            photoWidth: photoWidth,
+            photoHeight: photoHeight,
 			removed: 0
 		});
 		photo.save(function(err) {
@@ -74,7 +79,7 @@ module.exports = function(mongoose) {
 
 	//OK
 	var getUserPhotos = function(userId, callback) {
-		Photo.find({userId:userId, removed: "0"}, {userId:0, firstName:0, lastName:0}, {sort: {dateTaken: -1}}, function(err,doc) { //check
+		Photo.find({userId:userId, removed: "0"}, {}, {sort: {dateTaken: -1}}, function(err,doc) { //check
 			callback(doc);
 		});
 	}	
