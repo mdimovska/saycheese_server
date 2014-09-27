@@ -90,6 +90,7 @@ app.post("/upload",function(req,res){
     return;
 });
 
+//not necessary
 app.post("/deletePicture",function(req,res){
     var _profileId = req.param('_profileId', null);
     var _pictureId = req.param('_pictureId',null);

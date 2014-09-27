@@ -109,7 +109,7 @@ module.exports = function(mongoose) {
 	
 	//OK
 	var getPhotosByUsers = function(usersIdArray, callback) { //users = id1 id2 ... 
-		Photo.find( {userId : {$in : usersIdArray }}, {} , {sort: {dateTaken: -1}} , function(err,result) {
+		Photo.find( {userId : {$in : usersIdArray }, removed: 0}, {} , {sort: {dateTaken: -1}} , function(err,result) {
 			callback(result);
 		});
 	}
